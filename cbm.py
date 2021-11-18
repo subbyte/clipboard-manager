@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 CLIPBOARD_QUEUE_FILE = "~/.clipboard"
+CLIPBOARD_SEPARATOR = "\n\n\n"
 
 import os
 import argparse
@@ -9,14 +10,15 @@ import pyperclip
 def update_clipboard(backward: bool):
     try:
         with open(os.path.expanduser(CLIPBOARD_QUEUE_FILE)) as cbf:
-            messages = cbf.read().splitlines()
+            messages = cbf.read().split(CLIPBOARD_SEPARATOR)
+            messages = [m.strip() for m in messages]
             if backward:
                 messages.reverse()
             it = iter(messages)
     except:
         it = iter([])
 
-    current_message = pyperclip.paste()
+    current_message = pyperclip.paste().strip()
 
     while True:
         try:
