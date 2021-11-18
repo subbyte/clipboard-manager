@@ -1,5 +1,17 @@
 #!/usr/bin/env python3
 
+""" A Personal Clipboard Manager for Threat Hunting Demo
+    Required libraries:
+        - `pyperclip` (Python package)
+        - `xsel` (system package/program/utility)
+"""
+
+__author__ = "Xiaokui Shu"
+__copyright__ = "(c) Xiaokui Shu 2021"
+__license__ = "GPL 3"
+__version__ = "1.0.0"
+__status__ = "Prototype"
+
 CLIPBOARD_QUEUE_FILE = "~/.clipboard"
 CLIPBOARD_SEPARATOR = "\n\n\n"
 
