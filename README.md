@@ -1,2 +1,1 @@
-# clipboard-manager
-A Personal Clipboard Manager
+# A Personal Clipboard Manager
